@@ -52,7 +52,6 @@ class TravasarouBrayAbrahamson2003(model.Model):
     def std_intra_event_err(self):
         return self._intra_event_error
     
-
     @property
     def std_err(self):
         return self._total_error
@@ -93,7 +92,7 @@ class TravasarouBrayAbrahamson2003(model.Model):
         ln_Ia = (
             c_1
             + c_2 * (s.mag - 6)
-            + c_3 * (s.mag - 6)**2
+            + c_3 * np.log(s.mag/6)
             + c_4 * np.log(np.sqrt(s.dist_rup**2 + h**2))
             + (S_11 + S_12 * (s.mag - 6)) * S_C
             + (S_21 + S_22 * (s.mag - 6)) * S_D
