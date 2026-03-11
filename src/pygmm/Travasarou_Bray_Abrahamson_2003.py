@@ -24,7 +24,7 @@ class TravasarouBrayAbrahamson2003(model.Model):
         model.NumericParameter("mag", True, 4.7, 7.6),
         model.NumericParameter("dist_rup", True, 0, 1000),
         # FIXME add a new parameter: site_class
-        model.NumericParameter("site_cond", True, 200, 1000),
+        model.CategoricalParameter("site_cond", True, 200, 1000),
         model.CategoricalParameter("mechanism", True, ["SS","NS","RS"])
     ]
 
